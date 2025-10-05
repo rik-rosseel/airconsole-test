@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirConsole Test</title>
+    <script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.9.0.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+<!--    <script type="module" src="/src/main.tsx"></script>-->
+    <label for="message">
+        Message:
+        <input id="message" type="text"></input>
+    </label>
+    <button id="btn-msg">Send</button>
+</body>
+</html>
+
+<script>
+    var airconsole = new AirConsole();
+
+    // When we press our button, we send a message to the screen
+    document.getElementById('btn-msg').addEventListener("click", function() {
+        airconsole.message(AirConsole.SCREEN, document.getElementById('message').value);
+    });
+</script>
+
+
